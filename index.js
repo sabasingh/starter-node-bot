@@ -25,11 +25,12 @@ controller.on('bot_channel_join', function (bot, message) {
 
 //bot.say({
 //    text:'Hi', 
-//    channel:'U11NXAJU8'
+//    channel:'D11NRA66S'
 //})
+
 chat.postMessage({
     text: 'hi let me test this shit out',
-    channel:@sabasingh
+    channel:'D11NRA66S'
 })
 
 
