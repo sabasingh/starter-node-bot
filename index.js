@@ -56,11 +56,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             {
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
-                    convo.say('Okay, let\'s continue with where we left off.');
-                    bot.startConversation(message, function (err, convo){
-                        convo.next();
-                        convo.say('This is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
-                });
+                    convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
               }
             },
         {
