@@ -58,7 +58,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                         "text": "this is the hyperlink: http://bit.ly/1ShRV2g",
                         "attachments": [
                             {
-                                "text": "Let me know when you are done editing your details!\n`I\'m done` `Skip this step`"
+                                "text": "Let me know when you are done editing your details!"
                                 
                             }
                         ]
@@ -75,7 +75,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                     
                    
                     //convo.say('let me know when you are done editing your details');
-                    //convo.say('`I\'m done` `Skip this step`');
+                    convo.say('`I\'m done` `Skip this step`');
                     convo.next();
               }
             },
