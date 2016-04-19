@@ -27,17 +27,12 @@ controller.on('bot_channel_join', function (bot, message) {
 //    text: 'if you want me to stop helping at any point, say "opt out"'
 //})
 
-bot.say(
-  {
-    text: 'my message text',
-//    channel: 'C0H338YH4' // a valid slack channel, group, mpim, or im ID
-  }
-);
 
-//controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-//  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
-//  bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
-//})
+
+controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
+  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
+  bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
+})
 
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
