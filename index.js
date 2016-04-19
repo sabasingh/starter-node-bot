@@ -24,9 +24,9 @@ controller.on('bot_channel_join', function (bot, message) {
 
 
 controller.hears(['hello', 'hi'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
-  bot.reply(message, 'I am a robot created by a human to help you understand how you can use Slack.')
-
+  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack It is great to talk to you!')
+  bot.reply(message, 'It\'s nice to talk to you right now wakakakakakaa.')
+})
 
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
