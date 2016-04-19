@@ -58,11 +58,10 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                         "text": "I am a test message http://i.imgur.com/E5i8kwl.png",
                         "attachments": [
                             {
-                                "text":""
+                                "text":"let me know when you are done editing your details"
                             }
                         ]
                     })
-                    convo.say('let me know when you are done editing your details');
                     convo.say('`I\'m done` `Skip this step`');
 //                    convo.say('`Skip this step`');
                     convo.next();
