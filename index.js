@@ -57,9 +57,8 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
                     convo.say('Okay, let\'s continue with where we left off.');
-                    convo.next();  
                     bot.startConversation(message, function (err, convo){
-                        convo.say('this is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
+                        convo.say('This is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                 });
               }
             },
@@ -67,7 +66,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             pattern: bot.utterances.no,
             default: true,
             callback: function(response, convo) {
-                convo.say('okay, just say "opt in" when you need me to help out again.');
+                convo.say('Okay, just say "opt in" when you need me to help out again.');
                 convo.next();
             }
         }
