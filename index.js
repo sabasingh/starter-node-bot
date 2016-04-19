@@ -56,7 +56,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             {
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
-                    convo.say('Okay, let's continue with where we left off.');
+                    convo.say('Okay, let\'s continue with where we left off.');
                     convo.next();  
               }
             },
