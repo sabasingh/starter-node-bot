@@ -26,23 +26,24 @@ controller.on('bot_channel_join', function (bot, message) {
 
 bot.api.chat.postMessage(
   {
-    text: 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you! \nIf you want me to stop helping at any point, say "opt out"',
+    text: 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you! \nIf you want me to stop helping at any point, say "opt out"\nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:',
+      text:'http://bit.ly/1ShRV2g',
     as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
 );
 
-bot.api.chat.postMessage(
-  {
-    text: 'This is what you look like in chats. Edit you profile details by tapping on your image or your name here:',
-    text:'http://bit.ly/1ShRV2g',
-      "attachments":[{
-          "text":'let me know when you are done editing your details!'
-      }],
-    as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-  }
-);
+//bot.api.chat.postMessage(
+//  {
+//    text: 'This is what you look like in chats. Edit you profile details by tapping on your image or your name here:',
+//    text:'http://bit.ly/1ShRV2g',
+//      "attachments":[{
+//          "text":'let me know when you are done editing your details!'
+//      }],
+//    as_user:true,
+//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+//  }
+//);
 
 
 // bot.startConversation(message, function(err,convo){
