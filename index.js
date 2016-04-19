@@ -24,7 +24,7 @@ controller.on('bot_channel_join', function (bot, message) {
 
 bot.say({
     text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
-    channel:@sabasingh
+    channel:'D11NRA66S'
 })
 
 
