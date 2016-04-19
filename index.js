@@ -67,7 +67,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                 convo.next();
             }
         }
-        ]);
+        ])
     });
 });
 
