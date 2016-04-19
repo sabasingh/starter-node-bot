@@ -32,13 +32,13 @@ controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, messa
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
 })
 
-
-
-bot.say({
-    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
-    channel:'D11NRA66S'
-})
-
+//
+//
+//bot.say({
+//    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
+//    channel:'D11NRA66S'
+//})
+//
 
 
 controller.hears('.*', ['mention'], function (bot, message) {
