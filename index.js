@@ -61,8 +61,18 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                                 "text": "Let me know when you are done editing your details!"
                             }
                         ]
-                    }   
-                    );
+                    }
+//                               {
+//                        "text": "I am a test message http://slack.com",
+//                            "attachments": [
+//                                {
+//                                    "text": "And here's an attachment!"
+//                                }
+//                            ]
+//                    }
+                    )
+                    
+                   
                     //convo.say('let me know when you are done editing your details');
                     convo.say('`I\'m done` `Skip this step`');
                     convo.next();
