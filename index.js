@@ -31,26 +31,40 @@ bot.api.chat.postMessage(
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
 );
+bot.api.chat.postMessage(
+  {
+    text: 'This is what you look like in chats. Edit you profile details by tapping on your image or your name here:',
+    text:"http://bit.ly/1ShRV2g",
+      "attachments":[{
+          "text":"let me know when you are done editing your details!"
+      }]
+    as_user:true,
+    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+  }
+);
+
+
+// bot.startConversation(message, function(err,convo){
+//      convo.say('This is what you look like in chats. Edit you profile details by tapping on your image or your name here:');
+//      convo.say(
+//                        {
+//                        "text": "http://bit.ly/1ShRV2g",
+//                        "attachments": [
+//                            {
+//                                "text": "Let me know when you are done editing your details!"
+//                                
+//                            }
+//                        ]
+//                      }
+//                    );
+//  })
 
 
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
   bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
-  bot.startConversation(message, function(err,convo){
-      convo.say('This is what you look like in chats. Edit you profile details by tapping on your image or your name here:');
-      convo.say(
-                        {
-                        "text": "http://bit.ly/1ShRV2g",
-                        "attachments": [
-                            {
-                                "text": "Let me know when you are done editing your details!"
-                                
-                            }
-                        ]
-                      }
-                    );
-  })
 })
+
 
 
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
