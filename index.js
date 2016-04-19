@@ -26,7 +26,7 @@ controller.on('bot_channel_join', function (bot, message) {
 bot.api.chat.postMessage(
   {
     text: 'my message text',
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+    channel: 'U11EX8S2F' // a valid slack channel, group, mpim, or im ID
   }
 );
 
