@@ -55,18 +55,20 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
         convo.ask('*Phew* I\'m back! Would you like to continue learning about Slack?', [
             {
                 pattern: bot.utterances.yes,
+               // default:true,
                 callback: function(response, convo) {
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
+                    convo.next();
               }
             },
-        {
-            pattern: bot.utterances.no,
-            default: true,
-            callback: function(response, convo) {
-                convo.say('Okay, just say "opt in" when you need me to help out again.');
-                convo.next();
+            {
+                pattern: bot.utterances.no,
+                default: true,
+                callback: function(response, convo) {
+                    convo.say('Okay, just say "opt in" when you need me to help out again.');
+                    convo.next();
+                }
             }
-        }
         ])
     });
 });
