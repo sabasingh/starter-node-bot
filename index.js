@@ -23,29 +23,21 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
-  bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
+bot.say({
+    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
+    channel:'U11NXAJU8'
 })
+
+
+
+//controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
+//  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
+//  bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
+//})
 
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
 })
-
-
-//controller.hears(['opt in', 'optin'], ['direct_message'], function (bot, message) {
-//    
-//      bot.startConverastion(message, function (err, convo){
-//          
-//            convo.ask('*Phew* I\'m back! Would you like to continue learning about Slack?', [{
-//
-//              pattern: bot.utterances.yes, 
-//              callback:function(response, convo){
-//                  convo.say('Okay, let\'s continue with where we left off.')
-//              }
-//          }])
-//      })
-//})
 
 
 controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
@@ -55,7 +47,6 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
         convo.ask('*Phew* I\'m back! Would you like to continue learning about Slack?', [
             {
                 pattern: bot.utterances.yes,
-               // default:true,
                 callback: function(response, convo) {
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.next();
@@ -72,20 +63,6 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
         ])
     });
 });
-
-
-    
-
-
-
-
-//
-//
-//bot.say({
-//    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
-//    channel:'D11NRA66S'
-//})
-//
 
 
 controller.hears('.*', ['mention'], function (bot, message) {
