@@ -23,15 +23,15 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-//bot.say({
-//    text:'Hi', 
-//    channel:'D11NRA66S'
-//})
-
-bot.postMessage({
-    text: 'hi let me test this shit out',
+bot.say({
+    text:'Hi', 
     channel:'D11NRA66S'
 })
+
+//bot.postMessage({
+//    text: 'hi let me test this shit out',
+//    channel:'D11NRA66S'
+//})
 
 
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
