@@ -23,37 +23,26 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-bot.api.chat.postMessage(
-  {
-    text: 'my message text',
-    channel: 'U11EX8S2F' // a valid slack channel, group, mpim, or im ID
-  }
-);
 
 bot.api.chat.postMessage(
   {
     text: 'my message text',
+    as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
 );
 
-//bot.postMessage({
-//    text: 'hi let me test this shit out',
-//    channel:'U11NXAJU8'
-//})
-
-//var sabaPresence = users.getPresence('U11NXAJU8')
-//if ()
-    
 
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
   bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
 })
 
+
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
 })
+
 
 
 controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
@@ -91,6 +80,10 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
     });
 });
 
+
+
+
+//------------------------------------------------------------------------------------------------------------------------------------------
 
 
 controller.hears('.*', ['mention'], function (bot, message) {
