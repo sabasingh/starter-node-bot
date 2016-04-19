@@ -22,12 +22,6 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
-bot.say({
-    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
-    channel:'D11NRA66S'
-})
-
-
 
 //controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
 //  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
@@ -37,6 +31,15 @@ bot.say({
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
 })
+
+
+
+bot.say({
+    text:'Hi, I am Francis J Underwood, welcome to Slack! It\'s great to talk to you!', 
+    channel:'D11NRA66S'
+})
+
+
 
 controller.hears('.*', ['mention'], function (bot, message) {
   bot.reply(message, 'You really do care about me. :heart:')
