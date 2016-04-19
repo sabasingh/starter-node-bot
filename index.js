@@ -56,11 +56,11 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say({
                         "text": "this is the hyperlink: http://bit.ly/1ShRV2g",
-//                        "attachments": [
-//                            {
-//                                "text": "Let me know when you are done editing your details!"
-//                            }
-//                        ]
+                        "attachments": [
+                            {
+                                "text": "Let me know when you are done editing your details!"
+                            }
+                        ]
                     }   
                     );
                     convo.say('let me know when you are done editing your details');
