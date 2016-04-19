@@ -36,6 +36,20 @@ bot.api.chat.postMessage(
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
   bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
+  bot.startConversation(message, function(err,convo){
+      convo.say('This is what you look like in chats. Edit you profile details by tapping on your image or your name here:');
+      convo.say(
+                        {
+                        "text": "http://bit.ly/1ShRV2g",
+                        "attachments": [
+                            {
+                                "text": "Let me know when you are done editing your details!"
+                                
+                            }
+                        ]
+                      }
+                    );
+  })
 })
 
 
@@ -63,15 +77,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                                 
                             }
                         ]
-                    }
-//                               {
-//                        "text": "I am a test message http://slack.com",
-//                            "attachments": [
-//                                {
-//                                    "text": "And here's an attachment!"
-//                                }
-//                            ]
-//                    }
+                      }
                     );
                     
                    
