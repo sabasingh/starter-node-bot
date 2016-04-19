@@ -53,10 +53,10 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             {
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
-                    convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
+                    //convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say({
                         
-                            "text": "I am a test message http://slack.com",
+                            "text": "Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here: http://slack.com",
                             "attachments": [
                                 {
                                     "text": "Let me know when you are done editing your details!"
