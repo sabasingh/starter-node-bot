@@ -26,7 +26,7 @@ controller.on('bot_channel_join', function (bot, message) {
 
 bot.api.chat.postMessage(
   {
-    text: 'my message text',
+    text: 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you! \nIf you want me to stop helping at any point, say "opt out"',
     as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
@@ -55,7 +55,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                 callback: function(response, convo) {
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say({
-                        "text": "I am a test message resources/card.png",
+                        "text": "I am a test message http://i.imgur.com/E5i8kwl.png",
                         "attachments": [
                             {
                                 "text": "And here's an attachment!"
