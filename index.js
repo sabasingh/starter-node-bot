@@ -32,6 +32,50 @@ controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, messa
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
 })
 
+
+//controller.hears(['opt in', 'optin'], ['direct_message'], function (bot, message) {
+//    
+//      bot.startConverastion(message, function (err, convo){
+//          
+//            convo.ask('*Phew* I\'m back! Would you like to continue learning about Slack?', [{
+//
+//              pattern: bot.utterances.yes, 
+//              callback:function(response, convo){
+//                  convo.say('Okay, let\'s continue with where we left off.')
+//              }
+//          }])
+//      })
+//})
+
+
+controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
+
+    bot.startConversation(message, function(err, convo) {
+
+        convo.ask('*Phew* I\'m back! Would you like to continue learning about Slack?', [
+            {
+                pattern: bot.utterances.yes,
+                callback: function(response, convo) {
+                    convo.say('Okay, let's continue with where we left off.');
+                    convo.next();  
+              }
+            },
+        {
+            pattern: bot.utterances.no,
+            default: true,
+            callback: function(response, convo) {
+                convo.say('okay, just say "opt in" when you need me to help out again.');
+                convo.next();
+            }
+        }
+        ]);
+    });
+});
+
+
+
+
+
 //
 //
 //bot.say({
