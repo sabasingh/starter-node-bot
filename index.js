@@ -31,13 +31,14 @@ bot.api.chat.postMessage(
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
 );
+
 bot.api.chat.postMessage(
   {
     text: 'This is what you look like in chats. Edit you profile details by tapping on your image or your name here:',
-    text:"http://bit.ly/1ShRV2g",
+    text:'http://bit.ly/1ShRV2g',
       "attachments":[{
-          "text":"let me know when you are done editing your details!"
-      }]
+          "text":'let me know when you are done editing your details!'
+      }],
     as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
