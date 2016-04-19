@@ -74,7 +74,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                     );
                     
                    
-                    //convo.say('let me know when you are done editing your details');
+                    convo.say('let me know when you are done editing your details');
                     convo.say('`I\'m done` `Skip this step`');
                     convo.next();
               }
