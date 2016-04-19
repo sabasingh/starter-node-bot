@@ -30,6 +30,13 @@ bot.api.chat.postMessage(
   }
 );
 
+bot.api.chat.postMessage(
+  {
+    text: 'my message text',
+    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+  }
+);
+
 //bot.postMessage({
 //    text: 'hi let me test this shit out',
 //    channel:'U11NXAJU8'
