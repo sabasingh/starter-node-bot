@@ -23,16 +23,21 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-bot.say({
-    text:'Hi', 
-    channel:'D11NRA66S'
-})
+bot.say(
+  {
+    text: 'my message text',
+    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+  }
+);
 
 //bot.postMessage({
 //    text: 'hi let me test this shit out',
-//    channel:'D11NRA66S'
+//    channel:'U11NXAJU8'
 //})
 
+//var sabaPresence = users.getPresence('U11NXAJU8')
+//if ()
+    
 
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
