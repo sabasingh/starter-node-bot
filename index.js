@@ -28,7 +28,7 @@ controller.on('bot_channel_join', function (bot, message) {
 //    channel:'D11NRA66S'
 //})
 
-chat.postMessage({
+bot.postMessage({
     text: 'hi let me test this shit out',
     channel:'D11NRA66S'
 })
