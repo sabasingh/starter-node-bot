@@ -73,6 +73,10 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
 });
 
 
+    bot.startConversation(message, function (err, convo){
+        convo.say('this is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
+    });
+
 
 
 
