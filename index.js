@@ -66,7 +66,7 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                 callback: function(response, convo) {
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say({
-                        "text": "I am a test message http://slack.com",
+                        "text": "I am a test message resources/card.png",
                         "attachments": [
                             {
                                 "text": "And here's an attachment!"
