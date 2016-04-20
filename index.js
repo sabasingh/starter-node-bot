@@ -38,10 +38,10 @@ bot.api.chat.postMessage(
 );
 
 // login dance 
-slack._send({id: 1,
-  type: "typing",
-  channel: "U11NXAJU8"
-});
+//slack._send({id: 1,
+//  type: "typing",
+//  channel: "U11NXAJU8"
+//});
 
 bot.api.chat.postMessage(
   {
