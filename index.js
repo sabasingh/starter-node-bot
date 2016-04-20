@@ -1,7 +1,9 @@
 var Botkit = require('botkit')
+var Slack = require("slack-client");
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
+var slack = new Slack(token, true, true);
 if (!slackToken) {
   console.error('SLACK_TOKEN is required!')
   process.exit(1)
@@ -22,13 +24,9 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
-var Slack = require("slack-client");
-var slack = new Slack(token, true, true);
-// login dance 
-slack._send({id: 1,
-  type: "typing",
-  channel: "U11NXAJU8"
-});
+
+
+
 
 
 bot.api.chat.postMessage(
@@ -39,14 +37,19 @@ bot.api.chat.postMessage(
   }
 );
 
+// login dance 
+slack._send({id: 1,
+  type: "typing",
+  channel: "U11NXAJU8"
+});
 
-//bot.api.chat.postMessage(
-//  {
-//    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
-//    as_user:true,
-//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-//  }
-//);
+bot.api.chat.postMessage(
+  {
+    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
+    as_user:true,
+    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+  }
+);
 
 //bot.api.chat.postMessage(
 //  {
