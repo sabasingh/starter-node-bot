@@ -1,9 +1,9 @@
 var Botkit = require('botkit')
-var Slack = require("slack-client");
+//var Slack = require("slack-client");
 
 // Expect a SLACK_TOKEN environment variable
 var slackToken = process.env.SLACK_TOKEN
-var slack = new Slack(token, true, true);
+//var slack = new Slack(token, true, true);
 if (!slackToken) {
   console.error('SLACK_TOKEN is required!')
   process.exit(1)
