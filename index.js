@@ -36,7 +36,7 @@ bot.api.chat.postMessage(
 
 bot.api.chat.postMessage(
   {
-    text: 'Hi, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"\nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
+    text: 'Hi, I am Francis J , welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"\nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
     
     as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
