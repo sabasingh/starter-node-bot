@@ -43,9 +43,21 @@ bot.api.chat.postMessage(
   }
 );
 
+
     bot.startTyping = function(src) {
         bot.reply(src, { type: 'typing' })
-    };
+    }
+
+    bot.replyWithTyping = function(src, resp, cb) {
+        var text;
+
+        if (typeof(resp) == 'string') {
+            text = resp;
+        } else {
+            text = resp.text;
+        }
+
+        var typingLength = 500 / 60 * text.length;
 
 
 bot.api.chat.postMessage(
