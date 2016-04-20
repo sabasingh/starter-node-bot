@@ -25,31 +25,32 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-
-
-
-
-bot.api.chat.postMessage(
-  {
-    text: 'Hi, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
-    as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-  }
-);
-
+var Slack = require("slack-client");
+var slack = new Slack(token, true, true);
 // login dance 
-//slack._send({id: 1,
-//  type: "typing",
-//  channel: "U11NXAJU8"
-//});
+slack._send({id: 1,
+  type: "typing",
+  channel: "CHANNEL_ID"
+});
 
-bot.api.chat.postMessage(
-  {
-    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
-    as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-  }
-);
+
+//
+//bot.api.chat.postMessage(
+//  {
+//    text: 'Hi, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
+//    as_user:true,
+//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+//  }
+//);
+
+
+//bot.api.chat.postMessage(
+//  {
+//    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
+//    as_user:true,
+//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+//  }
+//);
 
 //bot.api.chat.postMessage(
 //  {
