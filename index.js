@@ -22,14 +22,19 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
+var Slack = require("slack-client");
+var slack = new Slack(token, true, true);
+// login dance 
+slack._send({id: 1,
+  type: "typing",
+  channel: "U11NXAJU8"
+});
 
 
 bot.api.chat.postMessage(
   {
     text: 'Hi, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
     as_user:true,
-    "id": 1,
-    "type": "typing",
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
 );
