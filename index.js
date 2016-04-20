@@ -35,13 +35,13 @@ bot.api.chat.postMessage(
 );
 
 
-bot.api.chat.postMessage(
-  {
-    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
-    as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-  }
-);
+//bot.api.chat.postMessage(
+//  {
+//    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
+//    as_user:true,
+//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+//  }
+//);
 
 //bot.api.chat.postMessage(
 //  {
