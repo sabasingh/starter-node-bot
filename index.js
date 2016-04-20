@@ -46,13 +46,13 @@ bot.api.chat.postMessage(
   }
 );
 
-bot.api.chat.postMessage(
-  {
-    text: 'Let me know when you are done editing your details!',
-    as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-  }
-);
+//bot.api.chat.postMessage(
+//  {
+//    text: 'Let me know when you are done editing your details!',
+//    as_user:true,
+//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+//  }
+//);
 
 //bot.api.chat.postMessage(
 //  {
