@@ -25,13 +25,7 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-//var Slack = require("slack-client");
-//var slack = new Slack(token, true, true);
-//// login dance 
-//slack._send({id: 1,
-//  type: "typing",
-//  channel: "U11NXAJU8"
-//});
+
 
 
 
@@ -44,25 +38,17 @@ bot.api.chat.postMessage(
 );
 
 
-    bot.startTyping = function(src) {
-        bot.reply(src, { type: 'typing' })
-    }
-
-    bot.replyWithTyping = function(src, resp, cb) {
-        var text;
-
-        if (typeof(resp) == 'string') {
-            text = resp;
-        } else {
-            text = resp.text;
-        }
-
-        var typingLength = 500 / 60 * text.length;
-
-
 bot.api.chat.postMessage(
   {
     text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
+    as_user:true,
+    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+  }
+);
+
+bot.api.chat.postMessage(
+  {
+    text: 'Let me know when you are done editing your details!',
     as_user:true,
     channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
   }
@@ -109,7 +95,10 @@ controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, messa
 })
 
 
-
+//opt out to DEACTIVATE THE BOT
+//BOT IS TYPING INDICATOR
+//COMPLETE CONVERSATION LOGIC
+//-----------------------------------------opt in conversation--------------------------------
 controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.startConversation(message, function(err, convo) {
@@ -125,13 +114,10 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                         "attachments": [
                             {
                                 "text": "Let me know when you are done editing your details!"
-                                
                             }
                         ]
                       }
                     );
-                    
-                   
                     convo.say('let me know when you are done editing your details');
                     convo.say('`I\'m done` `Skip this step`');
                     convo.next();
