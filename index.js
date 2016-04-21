@@ -24,14 +24,14 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
-var Slack = require("slack-client");
-var slack = new Slack(token, true, true);
-// login dance 
-slack._send({
-  id: 1,
-  type: "typing",
-  channel: "U11NXAJU8"
-});
+//var Slack = require("slack-client");
+//var slack = new Slack(token, true, true);
+//// login dance 
+//slack._send({
+//  id: 1,
+//  type: "typing",
+//  channel: "U11NXAJU8"
+//});
 
 
 //bot.api.chat._send({id: 1,
