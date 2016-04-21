@@ -40,10 +40,11 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
         "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here:",
         "attachments": [
             {
+                "text":"just say 'i'm done' when you are ready to move on.",
                 "image_url": "http://i.imgur.com/E5i8kwl.png"
             }
         ],
-        "text":"just say 'i'm done' when you are ready to move on."
+        
       });
   })
 });
@@ -51,7 +52,7 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
 controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
     convo.say({
-        "text": "Great! I am here if you want help. Just say 'opt in' if you need anything"
+        "text": "Okay. I am here if you want help. Just say 'opt in' if you need anything"
       });
   })
 });
