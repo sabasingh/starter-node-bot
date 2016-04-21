@@ -46,15 +46,18 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
             }
         ]
       });
+      
     convo.say({
         "text":"when you are done, just tap on I\'m done below",
         "attachments": [{
             "image_url": "http://i.imgur.com/8fNIC7S.png",
-            "text":"cover this text with buttons"
+            "text":"cover this text with buttons",
+            "color": "#ffffff",
         }]
     });
   })
 });
+
 
 //bot.api.chat.postMessage(
 //  {
