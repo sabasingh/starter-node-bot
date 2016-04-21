@@ -41,14 +41,28 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
         "attachments": [
             {
                 "image_url": "http://i.imgur.com/E5i8kwl.png",
-                "image_url":"http://i.stack.imgur.com/UIxDV.png",
-                "text":"just tap 'i'm done' when you are ready to move on."
+               // "image_url":"http://i.stack.imgur.com/UIxDV.png",//button
+                "text":"cover this text with the image of the card as well."
             }
-        ],
-        
+        ]
       });
+    convo.say({
+        "text":"when you are done, just tap on I\'m done below",
+        "attachments": [{
+            "image_url": "http://i.stack.imgur.com/UIxDV.png",
+            "text":"cover this text with buttons"
+        }]
+    });
   })
 });
+
+//bot.api.chat.postMessage(
+//  {
+//    text: 'When you are done, just tap on I\'m done below',
+//    as_user:true,
+//    channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
+//  }
+//);
 
 controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
@@ -61,7 +75,7 @@ controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], functio
 controller.hears(['I\'m done', 'I am done', 'i\'m done', 'i am done', ], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
     convo.say({
-        "text": "okay. Let's move on to the next step."
+        "text": "okay. If you want to edit your profile at any time, tap on the '...' icon, go to settings, and then go to edit profile"
       });
   })
 });
