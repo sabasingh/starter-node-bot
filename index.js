@@ -30,15 +30,6 @@ bot.api.chat.postMessage(
     text: 'Heya, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
     as_user:true,
     channel: 'U11EX8S2F', // a valid slack channel, group, mpim, or im ID
-    attachments: [
-        {
-    //         "text": "And here's an attachment!",
-    //         // "image_url": "https://scontent-lga3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/11231110_10206951231633518_2676639740893377414_o.jpg",
-    //         // "image_width": 1080,
-    //         // "image_height": 1080,
-    //         // "image_bytes": 152104,
-        }
-    ]
   }
 );
 
@@ -89,7 +80,7 @@ bot.api.chat.postMessage(
 
 
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
-  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you!')
+  bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you! What can I help you learn about Slack today?')
   bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
 })
 
