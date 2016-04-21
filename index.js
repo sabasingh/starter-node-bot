@@ -40,6 +40,11 @@ controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], functio
 });
 
 
+
+
+
+
+//-----------------------------------------edit profile conversation---------------------------
 controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
     convo.say({
@@ -64,66 +69,66 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
 //WAIT FOR A FEW SECONDS TILL YOU ARE DONE TYPING IM DONE
 
 
-
-bot.api.chat.postMessage({
+bot.api.chat.postMessage({ //SHOULD ONLY HAPPEN AFTER THE IM DONE BUTTON ON EDIT PROFILE IS SELECTED
         text: 'If you want to edit your profile at any time, tap on the ... icon, go to settings, and then go to edit profile',
         as_user:true,
         channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
      });
 
-//bot.api.chat.postMessage(
-//  {
-//    text: 'Let me know when you are done editing your details!',
-//    as_user:true,
-//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-//  }
-//);
-
-//bot.api.chat.postMessage(
-//  {
-//    text: 'This is what you look like in chats. Edit you profile details by tapping on your image or your name here:',
-//    text:'http://bit.ly/1ShRV2g',
-//      "attachments":[{
-//          "text":'let me know when you are done editing your details!'
-//      }],
-//    as_user:true,
-//    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
-//  }
-//);
 
 
-// bot.startConversation(message, function(err,convo){
-//      convo.say('This is what you look like in chats. Edit you profile details by tapping on your image or your name here:');
-//      convo.say(
-//                        {
-//                        "text": "http://bit.ly/1ShRV2g",
-//                        "attachments": [
-//                            {
-//                                "text": "Let me know when you are done editing your details!"
-//                                
-//                            }
-//                        ]
-//                      }
-//                    );
-//  })
 
 
+
+
+
+//-----------------------------------------you can ask me questions at any time---------------------------
+
+bot.api.chat.postMessage({ //SHOULD ONLY HAPPEN AFTER THE ... ICON ANIMATION IS DONE
+        text: 'If you have any questions, you can ask me at any time. What do you want to know about?',
+        as_user:true,
+        channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
+     });
+
+controller.hears(['job', 'title', 'job title'], ['direct message'], function (bot,message){
+    bot.startConversation(message, function(err, convo) {
+        convo.say({
+            "text":"You can change your Job Title by tapping on the ... icon, tapping on Settings, and then going to Edit Profile",
+            "attachments": [{
+                "image_url": "http://i.imgur.com/8fNIC7S.png",
+                "text":"this is tell me more and show me buttons."
+            }]
+           });
+        });
+    });
+
+
+
+
+
+
+//-----------------------------------------random hello message---------------------------
 controller.hears(['hello', 'hi', 'hola', 'sup', 'ola'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Hi, I am Francis J Underwood, welcome to Slack! It is great to talk to you! What can I help you learn about Slack today?')
   bot.reply(message, 'If you want me to stop helping at any point, say "opt out"')
-})
+});
 
 
 
+
+
+
+
+//-----------------------------------------opt out message---------------------------
 controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, message) {
   bot.reply(message, 'Great! I am here if you want help. Just say "opt in" if you need anything')
-})
+});
 
 
 //opt out to DEACTIVATE THE BOT
 //BOT IS TYPING INDICATOR
 //COMPLETE CONVERSATION LOGIC
-//-----------------------------------------opt in conversation--------------------------------
+//-----------------------------------------opt in conversation starting at edit profile---------------------------
 controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
 
     bot.startConversation(message, function(err, convo) {
@@ -132,14 +137,12 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             {
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
-                    convo.say('Okay. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say({
-                        "attachments": [
-                            {
-                                "text": "Cover this image",
-                                "image_url": "http://i.imgur.com/E5i8kwl.png"
-                            }
-                        ]
+                        "text":"Okay. This is what you look like in chats. Edit your ptofile details by tapping on your image or your name here:",
+                        "attachments": [{
+                            "image_url": "http://i.imgur.com/E5i8kwl.png",
+                            "text":"cover this text."
+                        }]
                       });
                     convo.say({
                         "text":"when you are done, just tap on I\'m done below",
