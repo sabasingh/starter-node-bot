@@ -40,7 +40,6 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
         "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here:",
         "attachments": [
             {
-                "text": "And here's an attachment!",
                 "image_url": "http://i.imgur.com/E5i8kwl.png"
             }
         ]
