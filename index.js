@@ -27,7 +27,7 @@ controller.on('bot_channel_join', function (bot, message) {
 //var Slack = require("slack-client");
 //var slack = new Slack(token, true, true);
 //// login dance 
-bot._send({id: 1,
+bot.api._send({id: 1,
   type: "typing",
   channel: "U11NXAJU8"
 });
