@@ -24,21 +24,30 @@ controller.on('bot_channel_join', function (bot, message) {
   bot.reply(message, "I'm here!")
 })
 
-//var Slack = require("slack-client");
-//var slack = new Slack(token, true, true);
-//// login dance 
-bot.api.chat._send({id: 1,
+var Slack = require("slack-client");
+var slack = new Slack(token, true, true);
+// login dance 
+slack._send({
+  id: 1,
   type: "typing",
   channel: "U11NXAJU8"
 });
 
+
+//bot.api.chat._send({id: 1,
+//  type: "typing",
+//  channel: "U11NXAJU8"
+//});
+
+
 bot.api.chat.postMessage({
-    "id": 1,
-    "type": "typing",
+//    "id": 1,
+//    "type": "typing",
     text: 'Hey, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, just tap opt out. \nShall we start learning Slack? Just type "yes" or "no"',
     as_user:true,
     channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
   });
+
 
 controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
@@ -75,6 +84,7 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
   })
 });
 
+
 //WAIT FOR A FEW SECONDS TILL YOU ARE DONE TYPING IM DONE
 
 
@@ -110,7 +120,6 @@ controller.hears(['job', 'title', 'job title'], ['direct message'], function (bo
            });
         });
     });
-
 
 
 
@@ -177,7 +186,6 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
         ])
     });
 });
-
 
 
 //------------------------------------------------------------------------------------------------------------------------------------------
