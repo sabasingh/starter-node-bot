@@ -27,7 +27,7 @@ controller.on('bot_channel_join', function (bot, message) {
 
 bot.api.chat.postMessage(
   {
-    text: 'Hey, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, just tap opt out. \nShall we start learning Slack?',
+    text: 'Hey, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, just tap opt out. \nShall we start learning Slack? Just type "yes" or "no"',
     as_user:true,
     channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
   }
@@ -40,10 +40,18 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
         "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g",
         "attachments": [
             {
-            //    "text": "And here's an attachment!",
+                "text": "And here's an attachment!",
                 "image_url": "http://i.imgur.com/E5i8kwl.png"
             }
         ]
+      });
+  })
+});
+
+controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], function (bot, message) {
+  bot.startConversation(message, function(err, convo) {
+    convo.say({
+        "text": "Great! I am here if you want help. Just say 'opt in' if you need anything"
       });
   })
 });
