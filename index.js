@@ -42,7 +42,8 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
             {
                 "image_url": "http://i.imgur.com/E5i8kwl.png"
             }
-        ]
+        ],
+        "text":"just say 'i'm done' when you are ready to move on."
       });
   })
 });
@@ -51,6 +52,14 @@ controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], functio
   bot.startConversation(message, function(err, convo) {
     convo.say({
         "text": "Great! I am here if you want help. Just say 'opt in' if you need anything"
+      });
+  })
+});
+
+controller.hears(['I\'m done', 'I am done', 'i\'m done', 'i am done', ], ['direct_message'], function (bot, message) {
+  bot.startConversation(message, function(err, convo) {
+    convo.say({
+        "text": "okay. Let's move on to the next step."
       });
   })
 });
