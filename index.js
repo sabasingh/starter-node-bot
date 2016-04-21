@@ -26,6 +26,8 @@ controller.on('bot_channel_join', function (bot, message) {
 
 
 bot.api.chat.postMessage({
+    "id": 1,
+    "type": "typing",
     text: 'Hey, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, just tap opt out. \nShall we start learning Slack? Just type "yes" or "no"',
     as_user:true,
     channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
@@ -125,9 +127,11 @@ controller.hears(['opt out', 'optout'], ['direct_message'], function (bot, messa
 });
 
 
-//opt out to DEACTIVATE THE BOT
+
 //BOT IS TYPING INDICATOR
 //COMPLETE CONVERSATION LOGIC
+//GET BOT.API.CHAT TO ONLY WORK IN ORDER
+//opt out to DEACTIVATE THE BOT
 //-----------------------------------------opt in conversation starting at edit profile---------------------------
 controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', function(bot, message) {
 
