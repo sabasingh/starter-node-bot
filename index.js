@@ -27,9 +27,18 @@ controller.on('bot_channel_join', function (bot, message) {
 
 bot.api.chat.postMessage(
   {
-    text: 'Hi, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
+    text: 'Heya, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, say "opt out"',
     as_user:true,
-    channel: 'U11NXAJU8' // a valid slack channel, group, mpim, or im ID
+    channel: 'U11EX8S2F', // a valid slack channel, group, mpim, or im ID
+    attachments: [
+        {
+    //         "text": "And here's an attachment!",
+    //         // "image_url": "https://scontent-lga3-1.xx.fbcdn.net/hphotos-xta1/t31.0-8/11231110_10206951231633518_2676639740893377414_o.jpg",
+    //         // "image_width": 1080,
+    //         // "image_height": 1080,
+    //         // "image_bytes": 152104,
+        }
+    ]
   }
 );
 
@@ -106,16 +115,18 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
                     convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
                     convo.say(
                         {
-                        "text": "http://bit.ly/1ShRV2g",
+                        "text": "test",
                         "attachments": [
                             {
-                                "text": "Let me know when you are done editing your details!"
+                                "text": "And here's an attachment!",
+                                "image_url": "http://i.imgur.com/E5i8kwl.png"
                             }
                         ]
                       }
                     );
                     convo.say('let me know when you are done editing your details');
                     convo.say('`I\'m done` `Skip this step`');
+                    convo.say('If you want to edit your profile at anytime, tap on the “...” icon, go to settings, and then tap on "Edit Profile".');
                     convo.next();
               }
             },
