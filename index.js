@@ -34,7 +34,7 @@ bot.api.chat.postMessage(
 );
 
 
-controller.hears(['yes, yea, y, sure, okay'], ['direct_message'], function (bot, message) {
+controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
     convo.say({
         "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g",
