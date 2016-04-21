@@ -41,7 +41,8 @@ controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], functi
         "attachments": [
             {
                 "image_url": "http://i.imgur.com/E5i8kwl.png",
-                 "text":"just say 'i'm done' when you are ready to move on."
+                "image_url":"http://i.stack.imgur.com/UIxDV.png",
+                "text":"just tap 'i'm done' when you are ready to move on."
             }
         ],
         
