@@ -25,47 +25,11 @@ controller.on('bot_channel_join', function (bot, message) {
 })
 
 
-bot.api.chat.postMessage(
-  {
+bot.api.chat.postMessage({
     text: 'Hey, I am Francis J Underwood, welcome to Slack! I\'m here to help you understand what you can do on Slack! \nIf you want me to stop helping at any point, just tap opt out. \nShall we start learning Slack? Just type "yes" or "no"',
     as_user:true,
     channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
-  }
-);
-
-
-controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], function (bot, message) {
-  bot.startConversation(message, function(err, convo) {
-    convo.say({
-        "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here:",
-        "attachments": [
-            {
-                "image_url": "http://i.imgur.com/E5i8kwl.png",
-               // "image_url":"http://i.stack.imgur.com/UIxDV.png",//button
-                "text":"cover this text with the image of the card as well."
-            }
-        ]
-      });
-      
-    convo.say({
-        "text":"when you are done, just tap on I\'m done below",
-        "attachments": [{
-            "image_url": "http://i.imgur.com/8fNIC7S.png",
-            "text":"cover this text with buttons",
-            "color": "#ffffff",
-        }]
-    });
-  })
-});
-
-
-//bot.api.chat.postMessage(
-//  {
-//    text: 'When you are done, just tap on I\'m done below',
-//    as_user:true,
-//    channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
-//  }
-//);
+  });
 
 controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
@@ -75,27 +39,37 @@ controller.hears(['no', 'nope', 'nah', 'not yet', ], ['direct_message'], functio
   })
 });
 
-controller.hears(['I\'m done', 'I am done', 'i\'m done', 'i am done', ], ['direct_message'], function (bot, message) {
+
+controller.hears(['yes', 'yea', 'y', 'sure', 'okay'], ['direct_message'], function (bot, message) {
   bot.startConversation(message, function(err, convo) {
     convo.say({
-        "text": "okay. If you want to edit your profile at any time, tap on the '...' icon, go to settings, and then go to edit profile"
+        "text": "Okay. First let's look at your profile. This is what you look like in chats. Edit your profile details by tapping on your image or your name here:",
+        "attachments": [{
+                "image_url": "http://i.imgur.com/E5i8kwl.png",
+                "text":"cover this text."
+            }]
       });
+    convo.say({
+        "text":"when you are done, just tap on I\'m done below",
+        "attachments": [{
+            "image_url": "http://i.imgur.com/8fNIC7S.png",
+            "text":"cover this text with buttons",
+            "color": "#ffffff",
+        }]
+    });
+    convo.next();
   })
 });
 
-//bot.api.chat.postMessage(
-//  {
-//    text: 'This is what you look like in chats. Edit your profile details by tapping on your image or your name here: \nhttp://bit.ly/1ShRV2g',
-//    as_user:true,
-//    channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
-//      "attachments": [
-//                            {
-//                                "text": "And here's an attachment!",
-//                                "image_url": "http://i.imgur.com/E5i8kwl.png"
-//                            }
-//                        ]
-//  }
-//);
+//WAIT FOR A FEW SECONDS TILL YOU ARE DONE TYPING IM DONE
+
+
+
+bot.api.chat.postMessage({
+        text: 'If you want to edit your profile at any time, tap on the ... icon, go to settings, and then go to edit profile',
+        as_user:true,
+        channel: 'U11NXAJU8', // a valid slack channel, group, mpim, or im ID
+     });
 
 //bot.api.chat.postMessage(
 //  {
@@ -158,21 +132,23 @@ controller.hears(['opt in', 'optin'], 'direct_message,direct_mention,mention', f
             {
                 pattern: bot.utterances.yes,
                 callback: function(response, convo) {
-                    convo.say('Okay, let\'s continue with where we left off. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
-                    convo.say(
-                        {
-                        "text": "test",
+                    convo.say('Okay. \nThis is what you look like in chats. Edit your profile details by tapping on your image or your name here:');
+                    convo.say({
                         "attachments": [
                             {
-                                "text": "And here's an attachment!",
+                                "text": "Cover this image",
                                 "image_url": "http://i.imgur.com/E5i8kwl.png"
                             }
                         ]
-                      }
-                    );
-                    convo.say('let me know when you are done editing your details');
-                    convo.say('`I\'m done` `Skip this step`');
-                    convo.say('If you want to edit your profile at anytime, tap on the “...” icon, go to settings, and then tap on "Edit Profile".');
+                      });
+                    convo.say({
+                        "text":"when you are done, just tap on I\'m done below",
+                        "attachments": [{
+                            "image_url": "http://i.imgur.com/8fNIC7S.png",
+                            "text":"cover this text with buttons",
+                            "color": "#ffffff",
+                        }]
+                    });
                     convo.next();
               }
             },
